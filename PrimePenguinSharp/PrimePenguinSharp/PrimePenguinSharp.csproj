@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net461;netcoreapp2.2</TargetFrameworks>
+		<RootNamespace>PrimePenguinSharp</RootNamespace>
+		<Version>0.0.1</Version>
+	</PropertyGroup>
+	<PropertyGroup>
+		<Description>PrimePenguinSharp is a C# and .NET library that is used internally by Prime Penguin.</Description>
+		<Authors>Sumit Khunger</Authors>
+		<Copyright>Prime Penguin</Copyright>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/PrimePenguin/FlaivySharp/master/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/PrimePenguin/PrimePenguinSharp</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/PrimePenguin/PrimePenguinSharp</RepositoryUrl>
+		<PackageTags>PrimePenguin,ecommerce</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageIconUrl>https://raw.githubusercontent.com/PrimePenguin/PrimePenguinSharp/master/PrimePenguin.png</PackageIconUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Abp" Version="5.12.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+</Project>
