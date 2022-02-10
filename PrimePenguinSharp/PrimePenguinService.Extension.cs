@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
-using PrimePenguinSharp.Dtos;
+using PrimePenguinSharp;
 
-namespace PrimePenguinSharp.PrimePenguinServiceClient
+namespace PrimePenguinSharp
 {
     public partial class Client
     {

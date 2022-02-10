@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PrimePenguinSharp.Dtos
+namespace PrimePenguinSharp
 {
     public class PrimePenguinResponse<T>
     {
