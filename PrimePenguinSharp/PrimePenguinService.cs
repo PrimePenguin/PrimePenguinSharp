@@ -52374,7 +52374,10 @@ namespace PrimePenguinSharp
     
         [JsonProperty("trackingUrl", NullValueHandling = NullValueHandling.Ignore)]
         public string TrackingUrl { get; set; }
-    
+        
+        [JsonProperty("integratorNote", NullValueHandling = NullValueHandling.Ignore)]
+        public string IntegratorNote { get; set; }
+
         [JsonProperty("customerTenantId", NullValueHandling = NullValueHandling.Ignore)]
         public int CustomerTenantId { get; set; }
     
@@ -52382,7 +52385,7 @@ namespace PrimePenguinSharp
         public int LogisticProviderId { get; set; }
     
         [JsonProperty("integratorProcessOrderLineItems", NullValueHandling = NullValueHandling.Ignore)]
-        public IEnumerable<IntegratorProcessOrderLineItem> IntegratorProcessOrderLineItems { get; set; }
+        public List<IntegratorProcessOrderLineItem> IntegratorProcessOrderLineItems { get; set; }
     
     
     }
