@@ -27981,7 +27981,177 @@ namespace PrimePenguinSharp
                     client_.Dispose();
             }
         }
-    
+
+        /// <summary>Get all Integrator orders</summary>
+        /// <param name="fromImportedDate">Filter orders by (From) date time when order was imported in Prime Penguin</param>
+        /// <param name="toImportedDate">Filter orders by (To) date time when order was imported in Prime Penguin</param>
+        /// <param name="fromModifiedDate">Filter orders by (From) date time when order was modified in Prime Penguin</param>
+        /// <param name="toModifiedDate">Filter orders by (To) date time when order was modified in Prime Penguin</param>
+        /// <param name="logisticProviderIds">Array of Logistic Provider Ids</param>
+        /// <param name="customerTenantIds">Array of Customer Tenant Ids</param>
+        /// <param name="status">Filter by Order Status. Status can be any of partial, fulfilled, pending, cancelled or refunded | Sorting Parameter</param>
+        /// <param name="onlyPaidOrders">Return only paid orders</param>
+        /// <param name="mergeBundleLineItems">Replace bundle line item with actual items of the bundle item</param>
+        /// <param name="salesChannelOrderId">Array of sales channel Order id</param>
+        /// <param name="externalOrderId">Array of external order id</param>
+        /// <param name="filter">Filter by Supplier Name</param>
+        /// <param name="sorting">Comma Seperated list of fields to sort the result with.
+        /// For more information on sorting parameters, check the response schema of the API.
+        /// Example: "id asc, date desc"</param>
+        /// <param name="maxResultCount">Maximum number of records to include in result. Defaults to 10</param>
+        /// <param name="skipCount">Number of records to skip</param>
+        /// <returns>Success</returns>
+        /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
+        public System.Threading.Tasks.Task<PrimePenguinResponse<PagedResultDtoOfMinimalIntegratorOrderDto>> ApiServicesAppIntegratorordersMinimalordersGetAsync(System.DateTimeOffset? fromImportedDate, System.DateTimeOffset? toImportedDate, System.DateTimeOffset? fromModifiedDate, System.DateTimeOffset? toModifiedDate, System.Collections.Generic.IEnumerable<int> logisticProviderIds, System.Collections.Generic.IEnumerable<int> customerTenantIds, string status, bool? onlyPaidOrders, bool? mergeBundleLineItems, System.Collections.Generic.IEnumerable<long> salesChannelOrderId, System.Collections.Generic.IEnumerable<string> externalOrderId, string filter, string sorting, int? maxResultCount, int? skipCount)
+        {
+            return ApiServicesAppIntegratorordersMinimalordersGetAsync(fromImportedDate, toImportedDate, fromModifiedDate, toModifiedDate, logisticProviderIds, customerTenantIds, status, onlyPaidOrders, mergeBundleLineItems, salesChannelOrderId, externalOrderId, filter, sorting, maxResultCount, skipCount, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>Get all Integrator orders</summary>
+        /// <param name="fromImportedDate">Filter orders by (From) date time when order was imported in Prime Penguin</param>
+        /// <param name="toImportedDate">Filter orders by (To) date time when order was imported in Prime Penguin</param>
+        /// <param name="fromModifiedDate">Filter orders by (From) date time when order was modified in Prime Penguin</param>
+        /// <param name="toModifiedDate">Filter orders by (To) date time when order was modified in Prime Penguin</param>
+        /// <param name="logisticProviderIds">Array of Logistic Provider Ids</param>
+        /// <param name="customerTenantIds">Array of Customer Tenant Ids</param>
+        /// <param name="status">Filter by Order Status. Status can be any of partial, fulfilled, pending, cancelled or refunded | Sorting Parameter</param>
+        /// <param name="onlyPaidOrders">Return only paid orders</param>
+        /// <param name="mergeBundleLineItems">Replace bundle line item with actual items of the bundle item</param>
+        /// <param name="salesChannelOrderId">Array of sales channel Order id</param>
+        /// <param name="externalOrderId">Array of external order id</param>
+        /// <param name="filter">Filter by Supplier Name</param>
+        /// <param name="sorting">Comma Seperated list of fields to sort the result with.
+        /// For more information on sorting parameters, check the response schema of the API.
+        /// Example: "id asc, date desc"</param>
+        /// <param name="maxResultCount">Maximum number of records to include in result. Defaults to 10</param>
+        /// <param name="skipCount">Number of records to skip</param>
+        /// <returns>Success</returns>
+        /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
+        public async System.Threading.Tasks.Task<PrimePenguinResponse<PagedResultDtoOfMinimalIntegratorOrderDto>> ApiServicesAppIntegratorordersMinimalordersGetAsync(System.DateTimeOffset? fromImportedDate, System.DateTimeOffset? toImportedDate, System.DateTimeOffset? fromModifiedDate, System.DateTimeOffset? toModifiedDate, System.Collections.Generic.IEnumerable<int> logisticProviderIds, System.Collections.Generic.IEnumerable<int> customerTenantIds, string status, bool? onlyPaidOrders, bool? mergeBundleLineItems, System.Collections.Generic.IEnumerable<long> salesChannelOrderId, System.Collections.Generic.IEnumerable<string> externalOrderId, string filter, string sorting, int? maxResultCount, int? skipCount, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/services/app/IntegratorOrders/MinimalOrders?");
+            if (fromImportedDate != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("FromImportedDate") + "=").Append(System.Uri.EscapeDataString(fromImportedDate.Value.ToString("s", System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (toImportedDate != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("ToImportedDate") + "=").Append(System.Uri.EscapeDataString(toImportedDate.Value.ToString("s", System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (fromModifiedDate != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("FromModifiedDate") + "=").Append(System.Uri.EscapeDataString(fromModifiedDate.Value.ToString("s", System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (toModifiedDate != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("ToModifiedDate") + "=").Append(System.Uri.EscapeDataString(toModifiedDate.Value.ToString("s", System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (logisticProviderIds != null)
+            {
+                foreach (var item_ in logisticProviderIds) { urlBuilder_.Append(System.Uri.EscapeDataString("LogisticProviderIds") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (customerTenantIds != null)
+            {
+                foreach (var item_ in customerTenantIds) { urlBuilder_.Append(System.Uri.EscapeDataString("CustomerTenantIds") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (status != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("Status") + "=").Append(System.Uri.EscapeDataString(ConvertToString(status, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (onlyPaidOrders != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("OnlyPaidOrders") + "=").Append(System.Uri.EscapeDataString(ConvertToString(onlyPaidOrders, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (mergeBundleLineItems != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("MergeBundleLineItems") + "=").Append(System.Uri.EscapeDataString(ConvertToString(mergeBundleLineItems, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (salesChannelOrderId != null)
+            {
+                foreach (var item_ in salesChannelOrderId) { urlBuilder_.Append(System.Uri.EscapeDataString("SalesChannelOrderId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (externalOrderId != null)
+            {
+                foreach (var item_ in externalOrderId) { urlBuilder_.Append(System.Uri.EscapeDataString("ExternalOrderId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (filter != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("Filter") + "=").Append(System.Uri.EscapeDataString(ConvertToString(filter, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (sorting != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("Sorting") + "=").Append(System.Uri.EscapeDataString(ConvertToString(sorting, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (maxResultCount != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("MaxResultCount") + "=").Append(System.Uri.EscapeDataString(ConvertToString(maxResultCount, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (skipCount != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("SkipCount") + "=").Append(System.Uri.EscapeDataString(ConvertToString(skipCount, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            urlBuilder_.Length--;
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    request_.Method = new System.Net.Http.HttpMethod("GET");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<PrimePenguinResponse<PagedResultDtoOfMinimalIntegratorOrderDto>>(response_, headers_).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new PrimePenguinServiceException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new PrimePenguinServiceException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+
         /// <returns>Success</returns>
         /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
         public Task<PrimePenguinResponse<GetProfilePictureOutput>> ApiServicesAppProfileGetfriendprofilepictureGetAsync(long? userId, int? tenantId)
@@ -63370,6 +63540,49 @@ namespace PrimePenguinSharp
     
     
     }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.3.1.0 (Newtonsoft.Json v11.0.0.0)")]
+    public partial class PagedResultDtoOfMinimalIntegratorOrderDto
+    {
+        [Newtonsoft.Json.JsonProperty("totalCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int TotalCount { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("items", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.IEnumerable<MinimalIntegratorOrderDto> Items { get; set; }
+
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.3.1.0 (Newtonsoft.Json v11.0.0.0)")]
+    public partial class MinimalIntegratorOrderDto
+    {
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long Id { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("orderId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("orderNumber", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string OrderNumber { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("fulfillmentStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string FulfillmentStatus { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("isPaid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool IsPaid { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("primePenguinImportedAt", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset PrimePenguinImportedAt { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("primePenguinModifiedAt", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? PrimePenguinModifiedAt { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("warehouseStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string WarehouseStatus { get; set; }
+
+
+    }
+
 
     public partial class PrimePenguinServiceException : System.Exception
     {
