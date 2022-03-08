@@ -52562,8 +52562,10 @@ namespace PrimePenguinSharp
     
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long Id { get; set; }
-    
-    
+
+        [JsonProperty("integratorNote", NullValueHandling = NullValueHandling.Ignore)]
+        public string IntegratorNote { get; set; }
+
     }
     
     public partial class PagedResultDtoOfIntegratorOrderDto 
@@ -52616,9 +52618,6 @@ namespace PrimePenguinSharp
     
         [JsonProperty("trackingUrl", NullValueHandling = NullValueHandling.Ignore)]
         public string TrackingUrl { get; set; }
-        
-        [JsonProperty("integratorNote", NullValueHandling = NullValueHandling.Ignore)]
-        public string IntegratorNote { get; set; }
 
         [JsonProperty("customerTenantId", NullValueHandling = NullValueHandling.Ignore)]
         public int CustomerTenantId { get; set; }
