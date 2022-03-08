@@ -3,11 +3,11 @@
 	<PropertyGroup>
 		<TargetFrameworks>net461;netcoreapp2.2</TargetFrameworks>
 		<RootNamespace>PrimePenguinSharp</RootNamespace>
-		<Version>1.1.0</Version>
+		<Version>1.2.0</Version>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Description>PrimePenguinSharp is a C# and .NET library that is used internally by Prime Penguin.</Description>
-		<Authors>Sumit Khunger</Authors>
+		<Authors>Ajay Kumar</Authors>
 		<Copyright>Prime Penguin</Copyright>
 		<PackageLicenseUrl>https://raw.githubusercontent.com/PrimePenguin/FlaivySharp/master/LICENSE</PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/PrimePenguin/PrimePenguinSharp</PackageProjectUrl>
