@@ -52367,6 +52367,65 @@ namespace PrimePenguinSharp
     
     
     }
+
+    public partial class IntegratorOrderBillingAddressDto 
+    {
+        [JsonProperty("salesChannelOrderBillingAddressId", NullValueHandling = NullValueHandling.Ignore)]
+        public string SalesChannelOrderBillingAddressId { get; set; }
+    
+        [JsonProperty("address1", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(1000)]
+        public string Address1 { get; set; }
+    
+        [JsonProperty("address2", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(1000)]
+        public string Address2 { get; set; }
+    
+        [JsonProperty("city", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string City { get; set; }
+    
+        [JsonProperty("company", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string Company { get; set; }
+    
+        [JsonProperty("country", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string Country { get; set; }
+    
+        [JsonProperty("countryCode", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(20)]
+        public string CountryCode { get; set; }
+    
+        [JsonProperty("firstName", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string FirstName { get; set; }
+    
+        [JsonProperty("lastName", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string LastName { get; set; }
+    
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(200)]
+        public string Name { get; set; }
+    
+        [JsonProperty("phone", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(30)]
+        public string Phone { get; set; }
+    
+        [JsonProperty("province", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string Province { get; set; }
+    
+        [JsonProperty("zip", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string Zip { get; set; }
+    
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public long Id { get; set; }
+    
+    
+    }
     
     public partial class IntegratorOrderRefundDto 
     {
@@ -52427,6 +52486,9 @@ namespace PrimePenguinSharp
     
         [JsonProperty("shippingAddress", NullValueHandling = NullValueHandling.Ignore)]
         public IntegratorOrderShippingAddressDto ShippingAddress { get; set; }
+
+        [JsonProperty("billingAddress", NullValueHandling = NullValueHandling.Ignore)]
+        public IntegratorOrderBillingAddressDto BillingAddress { get; set; }
     
         /// <summary>An array of PrimePenguin.Technology.Integrators.Orders.Dto.IntegratorOrderRefundDto objects for this order.</summary>
         [JsonProperty("refunds", NullValueHandling = NullValueHandling.Ignore)]
