@@ -48524,7 +48524,13 @@ namespace PrimePenguinSharp
     
         [JsonProperty("processOrders", NullValueHandling = NullValueHandling.Ignore)]
         public bool ProcessOrders { get; set; }
-    
+
+        [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
+        public bool OverwriteOrderChanges { get; set; }
+
+        [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ProductMasterSalesChannelId { get; set; }
+
         [JsonProperty("syncPurchaseOrders", NullValueHandling = NullValueHandling.Ignore)]
         public bool SyncPurchaseOrders { get; set; }
     
@@ -52033,7 +52039,13 @@ namespace PrimePenguinSharp
         /// <summary>Process Warehouse order changes at Prime Penguin</summary>
         [JsonProperty("processOrders", NullValueHandling = NullValueHandling.Ignore)]
         public bool ProcessOrders { get; set; }
-    
+
+        [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
+        public bool OverwriteOrderChanges { get; set; }
+
+        [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ProductMasterSalesChannelId { get; set; }
+
         /// <summary>Process Warehouse purchase order changes at Prime Penguin</summary>
         [JsonProperty("syncPurchaseOrders", NullValueHandling = NullValueHandling.Ignore)]
         public bool SyncPurchaseOrders { get; set; }
@@ -62567,7 +62579,13 @@ namespace PrimePenguinSharp
         /// <summary>Process Warehouse order changes at Prime Penguin</summary>
         [Newtonsoft.Json.JsonProperty("processOrders", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool ProcessOrders { get; set; }
-    
+
+        [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
+        public bool OverwriteOrderChanges { get; set; }
+
+        [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ProductMasterSalesChannelId { get; set; }
+
         /// <summary>Process Warehouse purchase order changes at Prime Penguin</summary>
         [Newtonsoft.Json.JsonProperty("syncPurchaseOrders", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SyncPurchaseOrders { get; set; }
@@ -62656,7 +62674,13 @@ namespace PrimePenguinSharp
         /// <summary>Process Warehouse order changes at Prime Penguin</summary>
         [Newtonsoft.Json.JsonProperty("processOrders", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool ProcessOrders { get; set; }
-    
+
+        [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
+        public bool OverwriteOrderChanges { get; set; }
+
+        [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ProductMasterSalesChannelId { get; set; }
+
         /// <summary>Process Warehouse purchase order changes at Prime Penguin</summary>
         [Newtonsoft.Json.JsonProperty("syncPurchaseOrders", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SyncPurchaseOrders { get; set; }
@@ -62690,7 +62714,13 @@ namespace PrimePenguinSharp
         /// <summary>Process Warehouse order changes at Prime Penguin</summary>
         [Newtonsoft.Json.JsonProperty("processOrders", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool ProcessOrders { get; set; }
-    
+
+        [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
+        public bool OverwriteOrderChanges { get; set; }
+
+        [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ProductMasterSalesChannelId { get; set; }
+
         /// <summary>Process Warehouse purchase order changes at Prime Penguin</summary>
         [Newtonsoft.Json.JsonProperty("syncPurchaseOrders", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SyncPurchaseOrders { get; set; }
