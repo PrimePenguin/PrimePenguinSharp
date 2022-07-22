@@ -47736,7 +47736,11 @@ namespace PrimePenguinSharp
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(200)]
         public string Location { get; set; }
-    
+
+        [JsonProperty("batchNumber", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(200)]
+        public string BatchNumber { get; set; }
+
         [JsonProperty("inventoryQuantity", NullValueHandling = NullValueHandling.Ignore)]
         public int? InventoryQuantity { get; set; }
     
@@ -53013,7 +53017,11 @@ namespace PrimePenguinSharp
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(200)]
         public string Location { get; set; }
-    
+
+        [JsonProperty("batchNumber", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(200)]
+        public string BatchNumber { get; set; }
+
         [JsonProperty("inventoryQuantity", NullValueHandling = NullValueHandling.Ignore)]
         public int? InventoryQuantity { get; set; }
     
@@ -53079,7 +53087,11 @@ namespace PrimePenguinSharp
         /// <summary>Name of the location where product is stored</summary>
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public string Location { get; set; }
-    
+
+        [JsonProperty("batchNumber", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(200)]
+        public string BatchNumber { get; set; }
+
         /// <summary>The number of items in stock for this product variant</summary>
         [JsonProperty("inventoryQuantity", NullValueHandling = NullValueHandling.Ignore)]
         public int? InventoryQuantity { get; set; }
@@ -62449,7 +62461,11 @@ namespace PrimePenguinSharp
         [Newtonsoft.Json.JsonProperty("location", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(200)]
         public string Location { get; set; }
-    
+
+        [JsonProperty("batchNumber", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(200)]
+        public string BatchNumber { get; set; }
+
         /// <summary>The number of items in stock for this product variant</summary>
         [Newtonsoft.Json.JsonProperty("inventoryQuantity", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? InventoryQuantity { get; set; }
