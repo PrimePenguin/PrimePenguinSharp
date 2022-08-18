@@ -48531,6 +48531,8 @@ namespace PrimePenguinSharp
 
         [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
         public bool OverwriteOrderChanges { get; set; }
+        [JsonProperty("skipOverwriteOrderIds", NullValueHandling = NullValueHandling.Ignore)]
+        public bool SkipOverwriteOrderIds { get; set; }
 
         [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProductMasterSalesChannelId { get; set; }
@@ -52046,6 +52048,8 @@ namespace PrimePenguinSharp
 
         [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
         public bool OverwriteOrderChanges { get; set; }
+        [JsonProperty("skipOverwriteOrderIds", NullValueHandling = NullValueHandling.Ignore)]
+        public bool SkipOverwriteOrderIds { get; set; }
 
         [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProductMasterSalesChannelId { get; set; }
@@ -62598,6 +62602,8 @@ namespace PrimePenguinSharp
 
         [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
         public bool OverwriteOrderChanges { get; set; }
+        [JsonProperty("skipOverwriteOrderIds", NullValueHandling = NullValueHandling.Ignore)]
+        public bool SkipOverwriteOrderIds { get; set; }
 
         [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProductMasterSalesChannelId { get; set; }
@@ -62693,6 +62699,8 @@ namespace PrimePenguinSharp
 
         [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
         public bool OverwriteOrderChanges { get; set; }
+        [JsonProperty("skipOverwriteOrderIds", NullValueHandling = NullValueHandling.Ignore)]
+        public bool SkipOverwriteOrderIds { get; set; }
 
         [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProductMasterSalesChannelId { get; set; }
@@ -62733,6 +62741,8 @@ namespace PrimePenguinSharp
 
         [JsonProperty("overwriteOrderChanges", NullValueHandling = NullValueHandling.Ignore)]
         public bool OverwriteOrderChanges { get; set; }
+        [JsonProperty("skipOverwriteOrderIds", NullValueHandling = NullValueHandling.Ignore)]
+        public bool SkipOverwriteOrderIds { get; set; }
 
         [JsonProperty("productMasterSalesChannelId", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProductMasterSalesChannelId { get; set; }
