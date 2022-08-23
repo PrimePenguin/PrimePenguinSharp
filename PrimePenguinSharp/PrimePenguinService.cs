@@ -10442,9 +10442,9 @@ namespace PrimePenguinSharp
         /// <param name="skipCount">Number of records to skip</param>
         /// <returns>Success</returns>
         /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
-        public Task<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderDto>> ApiServicesAppIntegratorordersOrdersGetAsync(DateTimeOffset? fromImportedDate, DateTimeOffset? toImportedDate, DateTimeOffset? fromModifiedDate, DateTimeOffset? toModifiedDate, IEnumerable<int> logisticProviderIds, IEnumerable<int> customerTenantIds, string status, bool? onlyPaidOrders, bool? mergeBundleLineItems, IEnumerable<long> salesChannelOrderId, IEnumerable<string> externalOrderId, string filter, string sorting, int? maxResultCount, int? skipCount)
+        public Task<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderDto>> ApiServicesAppIntegratorordersOrdersGetAsync(DateTimeOffset? fromImportedDate, DateTimeOffset? toImportedDate, DateTimeOffset? fromModifiedDate, DateTimeOffset? toModifiedDate, IEnumerable<int> logisticProviderIds, IEnumerable<int> customerTenantIds, string status, string warehouseStatus, bool? onlyPaidOrders, bool? mergeBundleLineItems, IEnumerable<long> salesChannelOrderId, IEnumerable<string> externalOrderId, string filter, string sorting, int? maxResultCount, int? skipCount)
         {
-            return ApiServicesAppIntegratorordersOrdersGetAsync(fromImportedDate, toImportedDate, fromModifiedDate, toModifiedDate, logisticProviderIds, customerTenantIds, status, onlyPaidOrders, mergeBundleLineItems, salesChannelOrderId, externalOrderId, filter, sorting, maxResultCount, skipCount, System.Threading.CancellationToken.None);
+            return ApiServicesAppIntegratorordersOrdersGetAsync(fromImportedDate, toImportedDate, fromModifiedDate, toModifiedDate, logisticProviderIds, customerTenantIds, status, warehouseStatus, onlyPaidOrders, mergeBundleLineItems, salesChannelOrderId, externalOrderId, filter, sorting, maxResultCount, skipCount, System.Threading.CancellationToken.None);
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -10468,7 +10468,7 @@ namespace PrimePenguinSharp
         /// <param name="skipCount">Number of records to skip</param>
         /// <returns>Success</returns>
         /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
-        public async Task<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderDto>> ApiServicesAppIntegratorordersOrdersGetAsync(DateTimeOffset? fromImportedDate, DateTimeOffset? toImportedDate, DateTimeOffset? fromModifiedDate, DateTimeOffset? toModifiedDate, IEnumerable<int> logisticProviderIds, IEnumerable<int> customerTenantIds, string status, bool? onlyPaidOrders, bool? mergeBundleLineItems, IEnumerable<long> salesChannelOrderId, IEnumerable<string> externalOrderId, string filter, string sorting, int? maxResultCount, int? skipCount, System.Threading.CancellationToken cancellationToken)
+        public async Task<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderDto>> ApiServicesAppIntegratorordersOrdersGetAsync(DateTimeOffset? fromImportedDate, DateTimeOffset? toImportedDate, DateTimeOffset? fromModifiedDate, DateTimeOffset? toModifiedDate, IEnumerable<int> logisticProviderIds, IEnumerable<int> customerTenantIds, string status, string warehouseStatus, bool? onlyPaidOrders, bool? mergeBundleLineItems, IEnumerable<long> salesChannelOrderId, IEnumerable<string> externalOrderId, string filter, string sorting, int? maxResultCount, int? skipCount, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/services/app/IntegratorOrders/Orders?");
@@ -10499,6 +10499,10 @@ namespace PrimePenguinSharp
             if (status != null) 
             {
                 urlBuilder_.Append(System.Uri.EscapeDataString("Status") + "=").Append(System.Uri.EscapeDataString(ConvertToString(status, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (warehouseStatus != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("WarehouseStatus") + "=").Append(System.Uri.EscapeDataString(ConvertToString(warehouseStatus, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             }
             if (onlyPaidOrders != null) 
             {
