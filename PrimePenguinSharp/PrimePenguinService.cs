@@ -48865,7 +48865,10 @@ namespace PrimePenguinSharp
     
         [JsonProperty("priceWithoutTax", NullValueHandling = NullValueHandling.Ignore)]
         public double? PriceWithoutTax { get; set; }
-    
+        
+        [JsonProperty("taxPercentage", NullValueHandling = NullValueHandling.Ignore)]
+        public double? TaxPercentage { get; set; }
+
         [JsonProperty("productId", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
     
@@ -50675,7 +50678,10 @@ namespace PrimePenguinSharp
     
         [JsonProperty("priceWithoutTax", NullValueHandling = NullValueHandling.Ignore)]
         public double? PriceWithoutTax { get; set; }
-    
+
+        [JsonProperty("taxPercentage", NullValueHandling = NullValueHandling.Ignore)]
+        public double? TaxPercentage { get; set; }
+
         [JsonProperty("productId", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
     
@@ -52254,7 +52260,10 @@ namespace PrimePenguinSharp
     
         [JsonProperty("priceWithoutTax", NullValueHandling = NullValueHandling.Ignore)]
         public double? PriceWithoutTax { get; set; }
-    
+
+        [JsonProperty("taxPercentage", NullValueHandling = NullValueHandling.Ignore)]
+        public double? TaxPercentage { get; set; }
+
         [JsonProperty("productId", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
     
