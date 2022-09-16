@@ -49421,7 +49421,10 @@ namespace PrimePenguinSharp
         [JsonProperty("deliveryInstructions", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(300)]
         public string DeliveryInstructions { get; set; }
-    
+
+        [JsonProperty("requestedDeliveryDate", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? RequestedDeliveryDate { get; set; }
+
         [JsonProperty("internalNote", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(300)]
         public string InternalNote { get; set; }
@@ -51103,7 +51106,9 @@ namespace PrimePenguinSharp
     
         [JsonProperty("deliveryInstructions", NullValueHandling = NullValueHandling.Ignore)]
         public string DeliveryInstructions { get; set; }
-    
+        [JsonProperty("requestedDeliveryDate", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? RequestedDeliveryDate { get; set; }
+
         [JsonProperty("internalNote", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalNote { get; set; }
     
@@ -52645,7 +52650,9 @@ namespace PrimePenguinSharp
     
         [JsonProperty("deliveryInstructions", NullValueHandling = NullValueHandling.Ignore)]
         public string DeliveryInstructions { get; set; }
-    
+        [JsonProperty("requestedDeliveryDate", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? RequestedDeliveryDate { get; set; }
+
         [JsonProperty("internalNote", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalNote { get; set; }
     
@@ -54414,7 +54421,9 @@ namespace PrimePenguinSharp
     
         [JsonProperty("deliveryInstructions", NullValueHandling = NullValueHandling.Ignore)]
         public string DeliveryInstructions { get; set; }
-    
+        [JsonProperty("requestedDeliveryDate", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? RequestedDeliveryDate { get; set; }
+
         [JsonProperty("internalNote", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalNote { get; set; }
     
@@ -56271,7 +56280,9 @@ namespace PrimePenguinSharp
         /// <summary>Special instructions for order delivery</summary>
         [JsonProperty("deliveryInstructions", NullValueHandling = NullValueHandling.Ignore)]
         public string DeliveryInstructions { get; set; }
-    
+        [JsonProperty("requestedDeliveryDate", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? RequestedDeliveryDate { get; set; }
+
         /// <summary>Internal Note for Order</summary>
         [JsonProperty("internalNote", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalNote { get; set; }
@@ -62902,7 +62913,9 @@ namespace PrimePenguinSharp
     
         [Newtonsoft.Json.JsonProperty("deliveryInstructions", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string DeliveryInstructions { get; set; }
-    
+        [JsonProperty("requestedDeliveryDate", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? RequestedDeliveryDate { get; set; }
+
         [Newtonsoft.Json.JsonProperty("internalNote", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string InternalNote { get; set; }
     
