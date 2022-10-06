@@ -53083,8 +53083,15 @@ namespace PrimePenguinSharp
     
         [JsonProperty("logisticProviderId", NullValueHandling = NullValueHandling.Ignore)]
         public int LogisticProviderId { get; set; }
-    
-    
+
+        [JsonProperty("purchaseOrderNumber", NullValueHandling = NullValueHandling.Ignore)]
+        public string PurchaseOrderNumber { get; set; }
+
+        [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
+        public string Currency { get; set; }
+
+        [JsonProperty("price", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? Price { get; set; }
     }
     
     public partial class IntegratorProcessPurchaseOrrderDto 
