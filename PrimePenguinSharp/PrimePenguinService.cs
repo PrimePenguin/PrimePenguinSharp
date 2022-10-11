@@ -49316,7 +49316,7 @@ namespace PrimePenguinSharp
         [JsonProperty("customerId", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(100)]
         public string CustomerId { get; set; }
-    
+
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(250)]
         public string Tags { get; set; }
@@ -51008,7 +51008,20 @@ namespace PrimePenguinSharp
         [JsonProperty("customerId", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(100)]
         public string CustomerId { get; set; }
-    
+
+        [JsonProperty("userId", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string UserId { get; set; }
+
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
+
+        [JsonProperty("freeText3", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText3 { get; set; }
+
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(250)]
         public string Tags { get; set; }
@@ -52564,7 +52577,20 @@ namespace PrimePenguinSharp
         [JsonProperty("customerId", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(100)]
         public string CustomerId { get; set; }
-    
+
+        [JsonProperty("userId", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string UserId { get; set; }
+
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
+
+        [JsonProperty("freeText3", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText3 { get; set; }
+
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(250)]
         public string Tags { get; set; }
@@ -54330,7 +54356,20 @@ namespace PrimePenguinSharp
         [JsonProperty("customerId", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(100)]
         public string CustomerId { get; set; }
-    
+
+        [JsonProperty("userId", NullValueHandling = NullValueHandling.Ignore)]
+        [System.ComponentModel.DataAnnotations.StringLength(100)]
+        public string UserId { get; set; }
+
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
+
+        [JsonProperty("freeText3", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText3 { get; set; }
+
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(250)]
         public string Tags { get; set; }
