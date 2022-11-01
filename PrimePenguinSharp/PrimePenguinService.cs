@@ -10906,6 +10906,78 @@ namespace PrimePenguinSharp
             }
         }
 
+        /// <summary>Update Integrator Order marked at</summary>
+        /// <returns>Success</returns>
+        /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
+        public Task ApiServicesAppIntegratorordersUpdateintegratorordermarkedatPostAsync(IEnumerable<IntegratorOrderMarkedAtInput> body)
+        {
+            return ApiServicesAppIntegratorordersUpdateintegratorordermarkedatPostAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>Update Integrator Order note</summary>
+        /// <returns>Success</returns>
+        /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
+        public async Task ApiServicesAppIntegratorordersUpdateintegratorordermarkedatPostAsync(IEnumerable<IntegratorOrderMarkedAtInput> body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/services/app/IntegratorOrders/UpdateIntegratorOrderMarkedAt");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var content_ = new System.Net.Http.StringContent(JsonConvert.SerializeObject(body, _settings.Value));
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json-patch+json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("POST");
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new PrimePenguinServiceException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+
 
         /// <summary>Retry failed processed order</summary>
         /// <param name="processedOrderSystemId">System Id of Processed Order</param>
@@ -52772,6 +52844,20 @@ namespace PrimePenguinSharp
 
         [JsonProperty("logisticProviderId", NullValueHandling = NullValueHandling.Ignore)]
         public int LogisticProviderId { get; set; }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.5.0 (NJsonSchema v10.6.6.0 (Newtonsoft.Json v11.0.0.0))")]
+    public partial class IntegratorOrderMarkedAtInput
+    {
+        [Newtonsoft.Json.JsonProperty("salesChannelOrderId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long SalesChannelOrderId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("customerTenantId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int CustomerTenantId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("logisticProviderId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int LogisticProviderId { get; set; }
+
     }
 
     public partial class IntegratorProductVariantDto 
