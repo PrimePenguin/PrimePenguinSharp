@@ -11054,7 +11054,134 @@ namespace PrimePenguinSharp
                     client_.Dispose();
             }
         }
-    
+
+        /// <summary>
+        /// Get Integrator orders shipment documents
+        /// </summary>
+        /// <param name="logisticProviderIds">Array of Logistic Provider Ids</param>
+        /// <param name="customerTenantIds">Array of Customer Tenant Ids</param>
+        /// <param name="salesChannelOrderId">Array of sales channel Order id</param>
+        /// <param name="filter">Filter by Supplier Name</param>
+        /// <param name="sorting">Comma Seperated list of fields to sort the result with.
+        /// <br/>For more information on sorting parameters, check the response schema of the API.
+        /// <br/>Example: "id asc, date desc"</param>
+        /// <param name="maxResultCount">Maximum number of records to include in result. Defaults to 10</param>
+        /// <param name="skipCount">Number of records to skip</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Task<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderShipmentDocumentDto>> ApiServicesAppIntegratorordersShipmentdocumentsGetAsync(IEnumerable<int> logisticProviderIds, IEnumerable<int> customerTenantIds, IEnumerable<long> salesChannelOrderId, string filter, string sorting, int? maxResultCount, int? skipCount)
+        {
+            return ApiServicesAppIntegratorordersShipmentdocumentsGetAsync(logisticProviderIds, customerTenantIds, salesChannelOrderId, filter, sorting, maxResultCount, skipCount, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>
+        /// Get Integrator orders shipment documents
+        /// </summary>
+        /// <param name="logisticProviderIds">Array of Logistic Provider Ids</param>
+        /// <param name="customerTenantIds">Array of Customer Tenant Ids</param>
+        /// <param name="salesChannelOrderId">Array of sales channel Order id</param>
+        /// <param name="filter">Filter by Supplier Name</param>
+        /// <param name="sorting">Comma Seperated list of fields to sort the result with.
+        /// <br/>For more information on sorting parameters, check the response schema of the API.
+        /// <br/>Example: "id asc, date desc"</param>
+        /// <param name="maxResultCount">Maximum number of records to include in result. Defaults to 10</param>
+        /// <param name="skipCount">Number of records to skip</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async Task<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderShipmentDocumentDto>> ApiServicesAppIntegratorordersShipmentdocumentsGetAsync(IEnumerable<int> logisticProviderIds, IEnumerable<int> customerTenantIds, IEnumerable<long> salesChannelOrderId, string filter, string sorting, int? maxResultCount, int? skipCount, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/services/app/IntegratorOrders/ShipmentDocuments?");
+            if (logisticProviderIds != null)
+            {
+                foreach (var item_ in logisticProviderIds) { urlBuilder_.Append(System.Uri.EscapeDataString("LogisticProviderIds") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (customerTenantIds != null)
+            {
+                foreach (var item_ in customerTenantIds) { urlBuilder_.Append(System.Uri.EscapeDataString("CustomerTenantIds") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (salesChannelOrderId != null)
+            {
+                foreach (var item_ in salesChannelOrderId) { urlBuilder_.Append(System.Uri.EscapeDataString("SalesChannelOrderId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            }
+            if (filter != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("Filter") + "=").Append(System.Uri.EscapeDataString(ConvertToString(filter, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (sorting != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("Sorting") + "=").Append(System.Uri.EscapeDataString(ConvertToString(sorting, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (maxResultCount != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("MaxResultCount") + "=").Append(System.Uri.EscapeDataString(ConvertToString(maxResultCount, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (skipCount != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("SkipCount") + "=").Append(System.Uri.EscapeDataString(ConvertToString(skipCount, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            urlBuilder_.Length--;
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    request_.Method = new System.Net.Http.HttpMethod("GET");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<PrimePenguinResponse<PagedResultDtoOfIntegratorOrderShipmentDocumentDto>>(response_, headers_).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new PrimePenguinServiceException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new PrimePenguinServiceException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
         /// <summary>Get All Integrator Products</summary>
         /// <param name="fromImportedDate">Filter products by (From) date time when product was imported in Prime Penguin</param>
         /// <param name="toImportedDate">Filter products by (To) date time when product was imported in Prime Penguin</param>
@@ -31792,7 +31919,94 @@ namespace PrimePenguinSharp
                     client_.Dispose();
             }
         }
-    
+
+        /// <param name="orderId">Order Id</param>
+        /// <param name="salesChannelId">Sales Channel Id</param>
+        /// <returns>Success</returns>
+        /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
+        public virtual Task<PrimePenguinResponse<ICollection<SalesChannelOrderShipmentDocumentDto>>> ApiServicesAppSaleschannelordersShipmentdocumentsGetAsync(long orderId, int? salesChannelId)
+        {
+            return ApiServicesAppSaleschannelordersShipmentdocumentsGetAsync(orderId, salesChannelId, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <param name="orderId">Order Id</param>
+        /// <param name="salesChannelId">Sales Channel Id</param>
+        /// <returns>Success</returns>
+        /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
+        public virtual async Task<PrimePenguinResponse<ICollection<SalesChannelOrderShipmentDocumentDto>>> ApiServicesAppSaleschannelordersShipmentdocumentsGetAsync(long orderId, int? salesChannelId, System.Threading.CancellationToken cancellationToken)
+        {
+            if (orderId == null)
+                throw new System.ArgumentNullException("orderId");
+
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/services/app/SalesChannelOrders/ShipmentDocuments?");
+            urlBuilder_.Append(System.Uri.EscapeDataString("OrderId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(orderId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            if (salesChannelId != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("SalesChannelId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(salesChannelId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            urlBuilder_.Length--;
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    request_.Method = new System.Net.Http.HttpMethod("GET");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<PrimePenguinResponse<ICollection<SalesChannelOrderShipmentDocumentDto>>>(response_, headers_).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new PrimePenguinServiceException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new PrimePenguinServiceException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
         /// <summary>Gets order fulfillment counts in a sales channel order</summary>
         /// <returns>Success</returns>
         /// <exception cref="PrimePenguinServiceException">A server side error occurred.</exception>
@@ -49193,7 +49407,46 @@ namespace PrimePenguinSharp
     
     
     }
-    
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v11.0.0.0))")]
+    public partial class SalesChannelOrderShipmentDocumentDto
+    {
+        [Newtonsoft.Json.JsonProperty("documentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string DocumentId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("shipmentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ShipmentId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("orderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("shipmentNumber", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ShipmentNumber { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parcelId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ParcelId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("trackingId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string TrackingId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("trackingUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string TrackingUrl { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("salesChannelOrderId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long SalesChannelOrderId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("shipmentDocumentFile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ShipmentDocumentFile { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long Id { get; set; }
+
+    }
+
+
     public partial class SalesChannelOrderShippingAddress 
     {
         [JsonProperty("salesChannelOrderShippingAddressId", NullValueHandling = NullValueHandling.Ignore)]
@@ -52431,7 +52684,46 @@ namespace PrimePenguinSharp
     
     
     }
-    
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v11.0.0.0))")]
+    public partial class IntegratorOrderShipmentDocumentDto
+    {
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long Id { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("documentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string DocumentId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("shipmentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ShipmentId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("orderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("shipmentNumber", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ShipmentNumber { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("parcelId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ParcelId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("trackingId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string TrackingId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("trackingUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string TrackingUrl { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("salesChannelOrderId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long SalesChannelOrderId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("shipmentDocumentFile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ShipmentDocumentFile { get; set; }
+
+    }
+
+
     public partial class IntegratorOrderShippingAddressDto 
     {
         [JsonProperty("salesChannelOrderShippingAddressId", NullValueHandling = NullValueHandling.Ignore)]
@@ -53014,7 +53306,18 @@ namespace PrimePenguinSharp
     
     
     }
-    
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v11.0.0.0))")]
+    public partial class PagedResultDtoOfIntegratorOrderShipmentDocumentDto
+    {
+        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int TotalCount { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<IntegratorOrderShipmentDocumentDto> Items { get; set; }
+
+    }
+
     public partial class PagedResultDtoOfIntegratorProductDto 
     {
         [JsonProperty("totalCount", NullValueHandling = NullValueHandling.Ignore)]
