@@ -53131,6 +53131,9 @@ namespace PrimePenguinSharp
         [JsonProperty("integratorNote", NullValueHandling = NullValueHandling.Ignore)]
         public string IntegratorNote { get; set; }
 
+        [JsonProperty("warehouseError", NullValueHandling = NullValueHandling.Ignore)]
+        public string WarehouseError { get; set; }
+
         [JsonProperty("customerTenantId", NullValueHandling = NullValueHandling.Ignore)]
         public int CustomerTenantId { get; set; }
 
