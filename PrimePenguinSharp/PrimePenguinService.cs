@@ -53120,8 +53120,8 @@ namespace PrimePenguinSharp
         [JsonProperty("integratorProcessOrderLineItems", NullValueHandling = NullValueHandling.Ignore)]
         public List<IntegratorProcessOrderLineItem> IntegratorProcessOrderLineItems { get; set; }
 
-        [JsonProperty("additionalData", NullValueHandling = NullValueHandling.Ignore)]
-        public TrackingDetailsAdditionalData AdditionalData { get; set; }
+        [JsonProperty("additionalDetails", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TrackingDetailsAdditionalData> AdditionalDetails { get; set; }
     }
 
     public class TrackingDetailsAdditionalData
