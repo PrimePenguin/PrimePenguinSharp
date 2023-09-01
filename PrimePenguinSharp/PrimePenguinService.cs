@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
 using PrimePenguinSharp;
+using System.ComponentModel.DataAnnotations;
 
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
@@ -53057,6 +53058,12 @@ namespace PrimePenguinSharp
 
         [JsonProperty("integratorNote", NullValueHandling = NullValueHandling.Ignore)]
         public string IntegratorNote { get; set; }
+
+        [JsonProperty("orderType", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderType { get; set; }
+
+        [JsonProperty("purchaseOrderNumber", NullValueHandling = NullValueHandling.Ignore)]
+        public string PurchaseOrderNumber { get; set; }
 
     }
 
