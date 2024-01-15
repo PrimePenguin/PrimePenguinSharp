@@ -23,3 +23,6 @@
 - Select `ReadObjectResponseAsync<` and press `CTRL + SHIFT + L` to select all occurences. Append `PrimePenguinResponse<` and press `Shift + >` and close the last word with `>`.
 - Select `Ta11111sk<` and press `CTRL + SHIFT + L` to select all occurences. Replace with `Task<PrimePenguinResponse<` and press `Shift + >` twice and close the last word with `>`.
 - Select `Read11111ObjectResponseAsync<` and press `CTRL + SHIFT + L` to select all occurences. Replace with `ReadObjectResponseAsync<PrimePenguinResponse<` and press `Shift + >` twice and close the last word with `>`.
+- Search & Replace the following with empty character:
+    - , Required = Required.Default
+    - , Required = Required.DisallowNull

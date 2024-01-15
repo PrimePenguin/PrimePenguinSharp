@@ -2,9 +2,10 @@
 
 namespace PrimePenguinSharp
 {
-    public partial class PrimePenguinResponse<TResult>
+    public class PrimePenguinResponse<T>
     {
-        public TResult Result { get; private set; }
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public T Result { get; set; }
 
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
         public bool Success { get; set; }
