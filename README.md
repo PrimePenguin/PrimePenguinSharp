@@ -26,3 +26,4 @@
 - Search & Replace the following with empty character:
     - , Required = Required.Default
     - , Required = Required.DisallowNull
+- Replace `Task<PrimePenguinResponse<ObjectResponseResult><T>> ReadObjectResponseAsync<PrimePenguinResponse<T>>` with `Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>`.
