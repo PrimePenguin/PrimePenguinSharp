@@ -25,7 +25,7 @@ namespace PrimePenguinSharp
 
         partial void PrepareRequest(HttpClient client, HttpRequestMessage request, string url)
         {
-            request.Headers.Add("Abp.TenantId", _tenantId.ToString());
+            request.Headers.Add("Abp-TenantId", _tenantId.ToString());
             request.Headers.Add("Authorization", $"Bearer {_accessToken}");
         }
 
