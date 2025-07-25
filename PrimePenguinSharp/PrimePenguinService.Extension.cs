@@ -34,7 +34,7 @@ namespace PrimePenguinSharp
             // Remove empty parameters (those with null or empty values)
             foreach (var key in query.AllKeys)
             {
-                if (string.IsNullOrWhiteSpace(query[key]))
+                if (string.IsNullOrWhiteSpace(key))
                 {
                     query.Remove(key);
                 }
