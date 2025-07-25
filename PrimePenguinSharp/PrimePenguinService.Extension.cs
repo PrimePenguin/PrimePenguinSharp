@@ -27,6 +27,21 @@ namespace PrimePenguinSharp
         {
             request.Headers.Add("Abp-TenantId", _tenantId.ToString());
             request.Headers.Add("Authorization", $"Bearer {_accessToken}");
+
+            var uriBuilder = new UriBuilder(url);
+            var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+
+            // Remove empty parameters (those with null or empty values)
+            foreach (var key in query.AllKeys)
+            {
+                if (string.IsNullOrWhiteSpace(query[key]))
+                {
+                    query.Remove(key);
+                }
+            }
+
+            uriBuilder.Query = query.ToString(); // Automatically URL-encodes as needed
+            request.RequestUri = uriBuilder.Uri;
         }
 
         partial void ProcessResponse(HttpClient client, HttpResponseMessage response)
