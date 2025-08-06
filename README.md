@@ -27,3 +27,29 @@
     - , Required = Required.Default
     - , Required = Required.DisallowNull
 - Replace `Task<PrimePenguinResponse<ObjectResponseResult><T>> ReadObjectResponseAsync<PrimePenguinResponse<T>>` with `Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>`.
+- Manually fix the `foreach` loops that take list of objects as input.
+```cs
+if (customerTenantIds != null)
+{
+    urlBuilder_.Append(System.Uri.EscapeDataString("CustomerTenantIds") + "=");
+    foreach (var item_ in customerTenantIds)
+    {
+        urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append(",");
+    }
+    urlBuilder_.Length--;
+    urlBuilder_.Append("&");
+}
+```
+Should look as
+```cs
+if (customerTenantIds != null)
+{
+    foreach (var item_ in customerTenantIds)
+    {
+        urlBuilder_.Append(System.Uri.EscapeDataString("CustomerTenantIds") + "=")
+        .Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+    }
+    urlBuilder_.Length--;
+    urlBuilder_.Append("&");
+}
+```

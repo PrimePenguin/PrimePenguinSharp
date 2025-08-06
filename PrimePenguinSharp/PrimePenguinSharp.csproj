@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net461;netcoreapp2.2</TargetFrameworks>
 		<RootNamespace>PrimePenguinSharp</RootNamespace>
-		<Version>1.13.2</Version>
+		<Version>1.13.3</Version>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Description>PrimePenguinSharp is a C# and .NET library that is used internally by Prime Penguin.</Description>
