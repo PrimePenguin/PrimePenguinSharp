@@ -86643,6 +86643,9 @@ namespace PrimePenguinSharp
         [JsonProperty("inventoryQuantity", NullValueHandling = NullValueHandling.Ignore)]
         public int? InventoryQuantity { get; set; }
 
+        [JsonProperty("reservedQuantity", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReservedQuantity { get; set; }
+
         [JsonProperty("inDate", NullValueHandling = NullValueHandling.Ignore)]
         public DateTimeOffset? InDate { get; set; }
 
