@@ -85995,6 +85995,11 @@ namespace PrimePenguinSharp
 
         [JsonProperty("salesChannelLineItemId", NullValueHandling = NullValueHandling.Ignore)]
         public string SalesChannelLineItemId { get; set; }
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
 
     }
 
@@ -97062,6 +97067,11 @@ namespace PrimePenguinSharp
 
         [JsonProperty("orderTrackingId", NullValueHandling = NullValueHandling.Ignore)]
         public long? OrderTrackingId { get; set; }
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
 
     }
 
