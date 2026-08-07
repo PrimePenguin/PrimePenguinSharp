@@ -86612,6 +86612,11 @@ namespace PrimePenguinSharp
 
         [JsonProperty("batch", NullValueHandling = NullValueHandling.Ignore)]
         public string Batch { get; set; }
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
 
     }
 
