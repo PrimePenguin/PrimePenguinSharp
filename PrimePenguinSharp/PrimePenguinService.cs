@@ -79352,6 +79352,12 @@ namespace PrimePenguinSharp
         [System.ComponentModel.DataAnnotations.StringLength(50)]
         public string Batch { get; set; }
 
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -98131,6 +98137,12 @@ namespace PrimePenguinSharp
         [System.ComponentModel.DataAnnotations.StringLength(50)]
         public string Batch { get; set; }
 
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
+
         [JsonProperty("salesChannelLineItemId", NullValueHandling = NullValueHandling.Ignore)]
         public long SalesChannelLineItemId { get; set; }
 
@@ -98173,6 +98185,13 @@ namespace PrimePenguinSharp
         [JsonProperty("batch", NullValueHandling = NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.StringLength(50)]
         public string Batch { get; set; }
+        
+        [JsonProperty("freeText1", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText1 { get; set; }
+
+        [JsonProperty("freeText2", NullValueHandling = NullValueHandling.Ignore)]
+        public string FreeText2 { get; set; }
+
 
         [JsonProperty("salesChannelLineItemId", NullValueHandling = NullValueHandling.Ignore)]
         public long SalesChannelLineItemId { get; set; }
